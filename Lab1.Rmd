@@ -18,6 +18,22 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+We can have several different sizes based on the text structure:
+
+# Big
+## Kinda big
+### Still biggish
+#### Pretty Normal
+
+You can **bold** or *italicize* text very easily. Most significantly, probably, is the ease of embedding images:
+
+![Description of FDR](images/fdr.png)
+![Overview of Combat](images/combat.png)
+![Overview of Gene Enrichment](images/enrich.png)
+
+
+\newpage
+
 ```{r bioc, eval=FALSE}
 ## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
@@ -28,21 +44,21 @@ biocLite("drosophila2.db")
 # etc. 
 ```
 
-```{r loadLibraries, message=FALSE, warning=FALSE, eval=TRUE}
+```{r loadLibraries, message=FALSE, warning=FALSE, eval=FALSE}
 library(knitr)
 library(affy)
 library(hgu133plus2.db)
 library(drosophila2.db)
 ```
 
-```{r loadData, eval = TRUE}
+```{r loadData, eval = FALSE}
 celFiles <- list.celfiles(path = "data", full.names=TRUE)
 data.affy <- ReadAffy(filenames = celFiles)
 data.affy
 ```
 
 Show an MA Plot
-```{r MAplot, eval = TRUE}
+```{r MAplot, eval = FALSE}
 MAplot(data.affy, pairs = TRUE, which=c(1,2,3,4), plot.method = "smoothScatter")
 ```
 
